@@ -131,3 +131,5 @@ DjangoDemo/__pycache__/
 Yogastie/__pycache__/
 Yogastie/migrations/__pycache__/
 templates/
+.idea/inspectionProfiles/
+.idea/

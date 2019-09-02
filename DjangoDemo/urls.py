@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Yogastie import views as yoga_views
-
+from mblog import views as blog_views
 urlpatterns = [
-    path('', yoga_views.index),
+    # TODO 暂时不实现瑜伽网站的内容  9/2
+    path('', blog_views.homepage),
+    path('post/<slug:slug>/', blog_views.showpost),
     path('admin/', admin.site.urls),
 ]
