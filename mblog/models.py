@@ -16,6 +16,7 @@ class Post(models.Model):
 
     class Meta:
         ordering = ('-pub_date',)
+        verbose_name_plural = '文章'
 
     def __str__(self):
         return self.title

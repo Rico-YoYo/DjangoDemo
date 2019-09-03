@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Yogastie.apps.YogastieConfig',
     # 添加新的模块
-    'mblog',
+    'mblog.apps.MblogConfig',
 ]
 
 MIDDLEWARE = [
