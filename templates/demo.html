@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+     
+     <!-- Bootstrap -->
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="nav-header">
+     <!--[if lte IE 8]>
+            <div class="text-center padding-top-50 padding-bottom-50 bg-blue-grey-100">
+                <p class="browserupgrade font-size-18">
+                    你正在使用一个
+                    <strong>
+                        过时
+                    </strong>
+                    的浏览器。请
+                    <a href="#">
+                        升级您的浏览器
+                    </a>
+                    ，以提高您的体验。
+                </p>
+            </div>
+        <![endif]-->
+    <header class="">
+        <div class="head-box">
+            <div class="container">
+                <div class="head-left">
+                    <div class="head-left-wrapper">
+                        <div class="head-left-slide">
+                            <p>
+                                欢迎光临善水瑜伽馆，微信号：shanshuiyujia01 关注有好礼哦
+                            </p>
+                                <font>
+                                <hr>
+                                <a id="met-weixins">
+                                    <i class="fa fa-weixin" data-plugin="webuiPopover" data-trigger="hover"
+                                       data-animation="pop" data-placement='bottom' data-width='130' data-padding='0'
+                                       data-content="<img src='{% static 'images/weixin.jpg' %}' alt='响应式塑身瑜伽馆瘦身培训类网站织梦模板(自适应手机端)' style='width: 120px;display:block;margin:auto;'>">
+                                    </i>
+                                </a>
+                                <hr>
+                                <a href="#"
+                                    rel="nofollow">
+                                        <i class="fa fa-qq">
+                                        </i>
+                                    </a>
+                                    <hr>
+                                    <a href="#" rel="nofollow">
+                                        <i class="fa fa-weibo">
+                                        </i>
+                                    </a>
+                                </font>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+     <img src="{% static 'images/weixin.jpg' %}">
+     <script src="{% static "js/index.js" %}"></script>
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script> -->
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script> -->
+</body>
+</html>

@@ -8,6 +8,17 @@ from .models import Post
 # 程序逻辑主要放在View文件中
 
 
+# 显示Demo文件
+def showDemo(request, demo):
+    template = get_template("demo.html")
+    try:
+        if demo is not None:
+            html = template.render(locals())
+            return HttpResponse(html)
+    except:
+        return redirect("/")
+
+
 # 显示详细数据
 def showpost(request, slug):
     template = get_template("post.html")

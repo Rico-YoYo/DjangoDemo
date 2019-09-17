@@ -14,12 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from Yogastie import views as yoga_views
 from mblog import views as blog_views
+
 urlpatterns = [
     # TODO 暂时不实现瑜伽网站的内容  9/2
-    path('', blog_views.homepage),
+    # path('', blog_views.homepage),
+    path('', include('helloblog.urls')),
+    path('', include('comments.urls')),
     path('post/<slug:slug>/', blog_views.showpost),
+    path('demo/<slug:demo>/', blog_views.showDemo),
     path('admin/', admin.site.urls),
 ]

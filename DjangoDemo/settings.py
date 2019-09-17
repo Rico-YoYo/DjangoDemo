@@ -38,8 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Yogastie.apps.YogastieConfig',
-    # 添加新的模块
+    # 添加新的app 模块
     'mblog.apps.MblogConfig',
+    # 添加新的app ulr：https://www.zmrenwu.com/courses/hellodjango-blog-tutorial/materials/60/
+    'helloblog.apps.HelloblogConfig',
+    # 添加评论模块
+    'comments.apps.CommentsConfig',
 ]
 
 MIDDLEWARE = [
