@@ -20,8 +20,10 @@ from mblog import views as blog_views
 
 urlpatterns = [
     # TODO 暂时不实现瑜伽网站的内容  9/2
-    # path('', blog_views.homepage),
-    path('', include('helloblog.urls')),
+     path('', blog_views.homepage),
+    # helloblog项目，先注释掉 2019/9/17日
+    # path('', include('helloblog.urls')),
+    # helloblog项目的评论模块,需要
     path('', include('comments.urls')),
     path('post/<slug:slug>/', blog_views.showpost),
     path('demo/<slug:demo>/', blog_views.showDemo),
