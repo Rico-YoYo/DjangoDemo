@@ -18,14 +18,21 @@ from django.urls import path, include
 from Yogastie import views as yoga_views
 from mblog import views as blog_views
 
+# 存放Url映射关系的列表
 urlpatterns = [
-    # TODO 暂时不实现瑜伽网站的内容  9/2
-     path('', blog_views.homepage),
+
+    path('admin/', admin.site.urls),
+    # 配置APP的url
+    path('article/', include('article.urls', namespace='article')),
+
     # helloblog项目，先注释掉 2019/9/17日
     # path('', include('helloblog.urls')),
-    # helloblog项目的评论模块,需要
-    path('', include('comments.urls')),
+    # helloblog项目的评论模块,先注释，需要时再打开 2019/9/17
+    # path('', include('comments.urls')),
+
+    # TODO 暂时不实现瑜伽网站的内容  《Django架站的16堂课》 9/2
+    path('', blog_views.homepage),
     path('post/<slug:slug>/', blog_views.showpost),
     path('demo/<slug:demo>/', blog_views.showDemo),
-    path('admin/', admin.site.urls),
+
 ]

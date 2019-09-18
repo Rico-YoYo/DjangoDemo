@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'helloblog.apps.HelloblogConfig',
     # 添加评论模块
     'comments.apps.CommentsConfig',
+    # 添加新的app模块
+    'article.apps.ArticleConfig',
 ]
 
 MIDDLEWARE = [
