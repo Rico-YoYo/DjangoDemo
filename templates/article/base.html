@@ -1,0 +1,31 @@
+<!--载入静态文件-->
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--网站主语言-->
+<html lang="zh-cn">
+<head>
+    <!--网站采用的字符编码-->
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}{% endblock title %}
+    </title>
+    <!--引入bootstrap的css文件-->
+    <link rel="stylesheet" href="{% static 'article/bootstrap/css/bootstrap.min.css' %}">
+</head>
+<body>
+
+    <!--引入导航栏-->
+    {% include 'article/header.html' %}
+    <!--预留具体页面的内容-->
+    {% block content %} {% endblock content %}
+    <!--引入注脚-->
+    {% include 'article/footer.html' %}
+
+    <!--bootstrap.js 依赖文件-->
+    <script src="{% static 'article/jquery/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'article/popper/popper.js' %}"></script>
+    <!--引入bootstrap.js 文件-->
+    <script src="{% static 'article/bootstrap/js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>
