@@ -5,8 +5,8 @@ from .models import Category, Tag, Post
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ['title', 'created_time', 'modified_time', 'category', 'author']
-    fields = ['title', 'body',  'category', 'tags']
+    list_display = ["title", "created_time", "modified_time", "category", "author"]
+    fields = ["title", "body", "category", "tags"]
 
     def save_model(self, request, obj, form, change):
         obj.author = request.user
