@@ -22,6 +22,9 @@ from mblog import views as blog_views
 urlpatterns = [
     path("admin/", admin.site.urls),
     # 配置APP的url
+    # 配置userprofile项目的app
+    path('userprofile/', include('userprofile.urls', namespace='userprofile')),
+    # 配置article项目的app
     path("article/", include("article.urls", namespace="article")),
     # helloblog项目，先注释掉 2019/9/17日
     path('', include('helloblog.urls')),

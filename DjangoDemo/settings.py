@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'comments.apps.CommentsConfig',
     # 添加新的app模块
     'article.apps.ArticleConfig',
+    # 添加用户管理模块
+    'userprofile.apps.UserprofileConfig',
 ]
 
 MIDDLEWARE = [
