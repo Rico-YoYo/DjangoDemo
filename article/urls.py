@@ -8,5 +8,16 @@ from . import views
 app_name = "article"
 
 urlpatterns = [
+    # 更改文章
+    path('article-update/<int:id>/',views.article_update, name='article_update'),
+    # 安全的删除文章
+    path('article-safe-delete/<int:id>', views.article_safe_delete, name='article_safe_delete'),
+    # 删除文章
+    path('article-delete/<int:id>/', views.article_delete, name='article_delete'),
+    # 写文章
+    path('article-create/', views.article_create, name='article_create'),
+    # 获取文章详情
+    path('article-detail/<int:id>/', views.article_detail, name='article_detail'),
+    # 获取文章列表
     path("article-list/", views.article_list, name="article_list")
     ]

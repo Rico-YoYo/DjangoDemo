@@ -1,0 +1,65 @@
+{% extends 'article/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    文章详情
+{% endblock title %}
+
+{% block content %}
+    <!--文章详情-->
+    <div class="container">
+        <div class="row">
+            <h1 class="col-12 mt-4 mb-4">{{ article.title }}</h1>
+            <div class="col-12 alert alert-success">
+                作者：{{ article.author }}
+                <!--删除文章标签-->
+                <!--<a href="#" onclick="confirm_delete()">删除文章</a>-->
+                <!--用安全的方式删除文章-->
+                <a href="#" onclick="confirm_safe_delete()">删除文章</a>
+                <a href="{% url 'article:article_update' article.id %}">修改文章</a>
+                <!--新增一个隐藏的表单-->
+                <form style="display: none;" id="safe_delete" method="post" action="{% url 'article:article_safe_delete' article.id %}">
+                    {% csrf_token %}
+                    <button type="submit">发送</button>
+                </form>
+            </div>
+            <div class="col-12">
+                <p>{{ article.body | safe }}</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //用更安全的方式删除文章
+        function confirm_safe_delete() {
+            //调用layer弹窗组件
+            layer.open({
+                //弹窗标题
+                title:'确认删除',
+                // 正文
+                content:'确认删除这篇文章么？',
+                // 点击确定按钮后调用的回调函数
+                yes:function (index,layero) {
+                    $('form#safe_delete button').click();
+                    layer.close(index);
+                },
+            })
+        }
+    
+        //删除文章函数
+    function confirm_delete() {
+        //调用layer弹窗组件
+        layer.open({
+            //弹窗标题
+            title:'确认删除',
+            // 正文
+            content:'确认删除这篇文章么？',
+            // 点击确定按钮后调用的回调函数
+            yes:function (index,layero) {
+                // 指定应当前往的URL
+                location.href='{% url 'article:article_delete' article.id %}'
+            },
+        })
+    }
+    </script>
+{% endblock content %}
