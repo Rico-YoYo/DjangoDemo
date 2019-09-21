@@ -6,6 +6,8 @@ from . import views
 app_name = 'userprofile'
 
 urlpatterns = [
+    # 用户删除
+    path('delete/<int:id>/', views.user_delete, name='delete'),
     # 用户注册
     path('register/', views.user_register, name='register'),
     # 用户登出

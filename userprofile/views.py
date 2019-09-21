@@ -2,6 +2,25 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from .forms import UserLoginForm, UserRegisterForm
+# 引入登录类的验证器
+from django.contrib.auth.decorators import login_required
+# 引入系统的User 对象
+from django.contrib.auth.models import User
+
+
+# 用户删除
+@login_required(login_url='/userprofile/login/')
+def user_delete(request, id):
+    if request.method == 'POST':
+        user = User.objects.get(id=id)
+        if request.user == user:
+            logout(request)
+            user.delete()
+            return redirect('article:article_list')
+        else:
+            return HttpResponse('你没有删除权限！')
+    else:
+        return HttpResponse('仅接受POST请求！')
 
 
 # 用户注册
