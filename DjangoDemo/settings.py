@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 新增第三方库
+    'password_reset',
+
     'Yogastie.apps.YogastieConfig',
     # 添加新的app 模块
     'mblog.apps.MblogConfig',
@@ -133,3 +137,17 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+
+# SMTP服务器，改为你的邮箱的smtp!
+EMAIL_HOST = 'smtp.qq.com'
+# 改为你自己的邮箱名！
+EMAIL_HOST_USER = '136013560@qq.com'
+# 你的邮箱密码
+EMAIL_HOST_PASSWORD = 'zabkaqyzkozxbgdf'  # 填写邮箱的授权码，否则邮件会发送不成功。
+# 发送邮件的端口
+EMAIL_PORT = 25
+# 是否使用 TLS
+EMAIL_USE_TLS = True
+# 默认的发件人
+DEFAULT_FROM_EMAIL = 'Rico的博客 <136013560@qq.com>'

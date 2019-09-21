@@ -30,8 +30,10 @@ urlpatterns = [
     path('', include('helloblog.urls')),
     # helloblog项目的评论模块,先注释，需要时再打开 2019/9/17
     path('', include('comments.urls')),
-    # TODO 暂时不实现瑜伽网站的内容  《Django架站的16堂课》 9/2
     path("", blog_views.homepage),
     path("post/<slug:slug>/", blog_views.showpost),
     path("demo/<slug:demo>/", blog_views.showDemo),
+
+    # 第三方插件的url配置
+    path('password-reset/', include('password_reset.urls'))
 ]
